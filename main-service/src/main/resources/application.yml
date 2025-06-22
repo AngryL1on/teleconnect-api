@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: "teleconnect-main-service"
+
+  config:
+    import:
+      - optional:file:.env[.properties]
+      - classpath:application-db.yml
+      - classpath:application-swagger.yml
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springdoc: DEBUG
+    io.swagger.v3: DEBUG
+    org.springframework.boot.logging: DEBUG
